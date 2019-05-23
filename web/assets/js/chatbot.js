@@ -3,7 +3,7 @@
         [
         "<div class='chatbot-box' style='width:420px;height:743px' id='chat_div'>",
             "<div class='chatbot-frame' style='width:100%;height:100%'><iframe style='width:100%;height:100%;border:none' ",
-                "src='https://www.coginsight.net/service/#/ba2b24ba-548f-4287-b392-554fc966b9d4?origin=*'></iframe>",
+                "src='https://dev.aiware.io/service/#/05ec8a5b-aeb0-4ae5-975f-8b70d64125fe'></iframe>",
                 "<button class='close'><img src='assets/img/btn_down_02_n.png'/></button>",
             "</div>",
             

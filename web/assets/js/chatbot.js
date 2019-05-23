@@ -27,6 +27,7 @@
 	}
 
 	function ko_chatbot() {
+		console.log('ko_chatbot()');
 		$('#chat_div').empty();
 		var ap = [
 			"<div class='chatbot-frame' style='width:100%;height:100%'><iframe style='width:100%;height:100%;border:none' ",
@@ -38,6 +39,7 @@
 		$('.close').click(close);
 	}
 	function en_chatbot() {
+		console.log('en_chatbot()');
 		$('#chat_div').empty();
 		var ap =  [
 			"<div class='chatbot-frame' style='width:100%;height:100%'><iframe style='width:100%;height:100%;border:none' ",
@@ -49,6 +51,7 @@
 		$('.close').click(close);
 	}
 	function zh_chatbot(){
+		console.log('zh_chatbot()');
 		$('#chat_div').empty();
 		var ap =  [
 			"<div class='chatbot-frame' style='width:100%;height:100%'><iframe style='width:100%;height:100%;border:none' ",

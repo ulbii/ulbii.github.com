@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<link href="assets/css/chatbot.css" rel="stylesheet" type="text/css" />
+    
+<style>
+
+html,body {
+    padding:0px;
+    margin:0px;
+    width:100%;
+    height:100%;
+    position:relative;
+    outline:none;
+}
+/*
+body{
+    background-image: url("assets/img/web_chat.png")
+}
+*/
+</style>
+<script language="javascript">
+
+	var ko = "http://www.khu.ac.kr/main.do";
+	var en = "http://www.khu.ac.kr/eng/index.jsp";
+	var zh = "http://www.khu.ac.kr/eng/index.jsp";
+
+    var lang = navigator.language;                                 
+    console.log('language : ', lang);
+
+	function init(){
+		if(lang=="ko-KR"){
+			document.getElementById("cardweb").src = ko;
+			ko_chatbot();
+		}else if(lang=="en-US"){
+			document.getElementById("cardweb").src = en;
+			en_chatbot();
+		}else if(lang=="zh-CN"){
+			document.getElementById("cardweb").src = zh;
+			zh_chatbot();
+		}
+	}
+
+	window.addEventListener('message',function(event){
+	    console.log('post message received :',event.data);
+	    var data = event.data
+	    try {
+	        data = JSON.parse(data);
+	    } catch(e) {
+	
+	    }
+	    if (data.action=='CHAT_ACTION' && data.data.type == 'link') {
+			document.getElementById("cardweb").src = data.data.url;
+	    }
+		if(data.action=='CHAT_ACTION' && data.data.type == 'url') {
+			var link = data.data.link;
+			document.getElementById("cardweb").src = link;
+			if(link==ko){ ko_chatbot(); }
+			if(link==zh){ zh_chatbot(); }
+			if(link==en){ en_chatbot(); }
+		}
+	});
+
+</script>
+
+
+</head>
+
+<body onload="init()">
+<iframe id="cardweb" width="100%" height="100%" frameborder="0" scrolling="no"marginwidth="0" marginheight="0">
+</iframe>
+<script src="assets/js/chatbot.js"></script>
+</html>
